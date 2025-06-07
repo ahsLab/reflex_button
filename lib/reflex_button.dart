@@ -26,7 +26,6 @@ class BounceReflexButton extends StatefulWidget {
 class _BounceReflexButtonState extends State<BounceReflexButton>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
-  late Animation<double> _animation;
 
   @override
   void initState() {
@@ -40,7 +39,6 @@ class _BounceReflexButtonState extends State<BounceReflexButton>
         setState(() {});
       });
 
-    _animation = Tween<double>(begin: 1.0, end: 0.95).animate(_controller);
   }
 
   @override
@@ -115,7 +113,7 @@ class RippleReflexButton extends StatelessWidget {
       child: InkWell(
         onTap: onPressed,
         borderRadius: BorderRadius.circular(borderRadius),
-        splashColor: color.withOpacity(0.3),
+        splashColor: color,
         child: Ink(
           decoration: BoxDecoration(
             color: color,
